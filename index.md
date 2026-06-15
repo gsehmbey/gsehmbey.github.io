@@ -1,123 +1,103 @@
 ---
 layout: default
 ---
-
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
+ 
+# $ whoami
+ 
+> The strongest exploit is almost always a human one. I build software defensively and read the intent behind the signal.
+ 
+I'm a **founding software engineer** who came to cybersecurity through **psychology** — a B.S. from the University of Iowa with a cybersecurity concentration. That order matters: I started with *why people do what they do*, then learned the technical craft to act on it. I write secure code in production at PivotPay, hold a **CompTIA Security+** certification, and I'm building an early-stage MSSP for small businesses — the segment most targeted and least served.
+ 
+Most security treats the human as the weak link to patch around. I treat the human as the system worth understanding.
+ 
 * * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
+ 
+# Featured Projects
+ 
+## Azure SIEM — Detection &amp; Response Pipeline
+ 
+An end-to-end detection pipeline built in **Microsoft Sentinel**, June 2024.
+ 
+*   Ingested security telemetry through **Log Analytics**
+*   Authored detection rules in **KQL**
+*   Automated triage and response with **Logic Apps**
+A sample detection — flagging password-spray / brute-force activity against Azure sign-in logs:
+ 
+```kql
+// Flag accounts seeing repeated invalid-credential sign-ins from one source
+SigninLogs
+| where TimeGenerated > ago(1h)
+| where ResultType == "50126"   // invalid username or password
+| summarize Attempts = count()
+        by IPAddress, UserPrincipalName, bin(TimeGenerated, 5m)
+| where Attempts > 10
+| project TimeGenerated, IPAddress, UserPrincipalName, Attempts
+| order by Attempts desc
+```
+ 
+[View the project &rarr;](https://github.com/yourusername/azure-siem-project)
+ 
+## Detection Validation — Atomic Red Team
+ 
+Mapping detections to real adversary behavior by emulating techniques and confirming they surface in the data — closing the gap between "we have a rule" and "the rule actually fires."
+ 
+[View the project &rarr;](https://github.com/yourusername/detection-validation)
+ 
+## Secure Development at PivotPay
+ 
+Production software with secure coding practices from the first commit: threat-aware design, code review, and shipping fast without shipping vulnerabilities.
+ 
+* * *
+ 
+# How I Investigate
+ 
+> Most breaches aren't a failure of technology. They're a failure to ask what a person was actually trying to do.
+ 
+An alert is a hypothesis, not a verdict. I work it through five steps:
+ 
+1.  **Anchor on facts** — separate what's observed from what's assumed.
+2.  **Name the missing context** — gaps are findings too.
+3.  **Form competing hypotheses** — hold the benign and malicious read at once.
+4.  **Identify the tipping evidence** — decide in advance what would settle it.
+5.  **Recommend an action** — end with a decision, not a description.
+To weigh whether activity is genuinely hostile, I assess across four dimensions instead of pattern-matching one indicator:
+ 
+| Dimension       | The question I'm answering                                  |
+|:----------------|:------------------------------------------------------------|
+| Context         | Is this normal for this user, host, and hour?               |
+| Sequence        | Does the order of events tell a story an attacker would write? |
+| Intent          | What goal best explains the behavior as a whole?            |
+| Counterfactual  | What would a legitimate user have done differently?         |
+ 
+* * *
+ 
+# Capabilities
+ 
+| Domain                | Tools &amp; methods                                          |
+|:----------------------|:------------------------------------------------------------|
+| Detection &amp; SIEM  | Microsoft Sentinel, `KQL`, Log Analytics, Logic Apps        |
+| Threat investigation  | IOC vs. IOA, lateral movement, ransomware lifecycle         |
+| Adversary emulation   | Atomic Red Team, detection validation                       |
+| Secure development    | Secure coding, code review, Git / GitHub workflows          |
+| Foundations           | Security+, TLS, network &amp; auth protocols                |
+| Human factors         | Social-engineering analysis, behavioral risk, intent modeling |
+ 
+* * *
+ 
+# Background
+ 
 <dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
+<dt>Now</dt>
+<dd>Founding Software Engineer, PivotPay &middot; Founder, small-business MSSP (early stage)</dd>
+<dt>Certification</dt>
+<dd>CompTIA Security+</dd>
+<dt>Education</dt>
+<dd>B.S. Psychology, University of Iowa &mdash; Cybersecurity concentration</dd>
 </dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+* * *
+ 
+# Contact
+ 
+*   **Email:** [you@example.com](mailto:you@example.com)
+*   **GitHub:** [github.com/yourusername](https://github.com/yourusername)
+*   **LinkedIn:** [linkedin.com/in/yourusername](https://www.linkedin.com/in/yourusername)
