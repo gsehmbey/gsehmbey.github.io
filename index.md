@@ -75,7 +75,7 @@ To weigh whether activity is genuinely hostile, I assess across four dimensions 
  
 | Domain                | Tools &amp; methods                                          |
 |:----------------------|:------------------------------------------------------------|
-| Detection &amp; SIEM  | Microsoft Sentinel, `KQL`, Log Analytics, Logic Apps        |
+| Detection &amp; SIEM  | Microsoft Sentinel, KQL, Log Analytics, Logic Apps        |
 | Threat investigation  | IOC vs. IOA, lateral movement, ransomware lifecycle         |
 | Adversary emulation   | Atomic Red Team, detection validation                       |
 | Secure development    | Secure coding, code review, Git / GitHub workflows          |
