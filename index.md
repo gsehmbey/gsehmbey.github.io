@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Your Name — Security &amp; Behavioral Science</title>
-<meta name="description" content="Founding software engineer working at the intersection of human behavior and system security." />
+<title>G S — Cybersecurity Projects</title>
+<meta name="description" content="A hands-on collection of my cybersecurity projects — detection engineering, secure code, and the human side of security." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -155,6 +155,8 @@
   }
   .entry .role{font-family:var(--mono);font-size:12.5px;color:var(--amber-deep);margin:0 0 10px;}
   .entry p{margin:0;font-size:1.01rem;line-height:1.55;}
+  .proj-link{font-family:var(--mono);font-size:0.82rem;color:var(--amber-deep);text-decoration:none;border-bottom:1px solid var(--rule-light);white-space:nowrap;}
+  .proj-link:hover{border-bottom-color:var(--amber-deep);}
   @media (max-width:640px){
     .entry{grid-template-columns:1fr;gap:6px;}
     .entry .when{padding-top:0;}
@@ -270,10 +272,10 @@
  
 <nav class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top">your-name<b>.dev</b></a>
+    <a class="brand" href="#top">G S <b>/ security</b></a>
     <div class="nav-links">
-      <a href="#about">background</a>
-      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#work">projects</a>
       <a href="#approach">approach</a>
       <a href="#skills">capabilities</a>
       <a href="#contact">contact</a>
@@ -285,7 +287,7 @@
   <div class="wrap">
     <span class="eyebrow">// security · behavioral science · code</span>
     <h1>The strongest exploit is almost always a <span class="glow">human</span> one.</h1>
-    <p class="lede">I'm a founding software engineer working at the layer where human behavior meets system security — building software defensively, and reading the intent behind the signal.</p>
+    <p class="lede">I'm a founding software engineer who came to security through psychology. This is a collection of the cybersecurity projects I've built — and how I think about defending systems by understanding the people who use them.</p>
     <div class="meta">
       <span>Founding Software Engineer, PivotPay</span>
       <span>Founder, small-business MSSP</span>
@@ -305,39 +307,40 @@
     <h2>A psychologist's read on how systems break.</h2>
     <p class="lead">My degree is in <strong>psychology</strong> — from the University of Iowa, with a concentration in cybersecurity. That order matters. I came to security through the question of <em>why people do what they do</em>, then learned the technical craft to act on it.</p>
     <p>Most security writing treats the human as the weak link to be patched around. I treat the human as the system worth understanding. Social engineering, attacker motivation, the small rationalizations that precede a breach — these are behavioral problems wearing a technical costume. I hold a <span class="ink-amber">CompTIA Security+</span> certification and write secure code in production every day, but the throughline of my work is the same one I started with: figure out what a person was actually trying to do, then build for it.</p>
+    <p style="font-family:var(--mono);font-size:0.9rem;color:var(--ink-soft);">Currently — Founding Software Engineer at <span class="ink-amber">PivotPay</span>, and building an early-stage MSSP for small businesses.</p>
   </div>
 </section>
  
-<!-- WORK -->
+<!-- PROJECTS -->
 <section class="section" id="work">
   <div class="wrap reveal">
-    <span class="eyebrow">// 02 — work</span>
-    <h2>What I'm building.</h2>
+    <span class="eyebrow">// 02 — projects</span>
+    <h2>What I've built.</h2>
  
     <div class="entry">
-      <div class="when">Present</div>
+      <div class="when">2024</div>
       <div>
-        <h3>PivotPay</h3>
-        <div class="role">Founding Software Engineer</div>
-        <p>Building production software with secure coding practices baked in from the first commit — code review, threat-aware design, and the discipline of shipping fast without shipping vulnerabilities.</p>
-      </div>
-    </div>
- 
-    <div class="entry">
-      <div class="when">Present</div>
-      <div>
-        <h3>Independent MSSP <span style="font-weight:400;color:var(--ink-soft);font-size:0.85em">(early stage)</span></h3>
-        <div class="role">Founder</div>
-        <p>Standing up a managed security service for small businesses — the segment that's most targeted and least served. Detection, monitoring, and plain-language security guidance for owners who don't have a SOC and shouldn't need one.</p>
-      </div>
-    </div>
- 
-    <div class="entry">
-      <div class="when">Jun 2024</div>
-      <div>
-        <h3>Azure SIEM — independent project</h3>
+        <h3>Azure SIEM — Detection &amp; Response Pipeline</h3>
         <div class="role">Detection engineering</div>
-        <p>Built an end-to-end detection pipeline in <strong>Microsoft Sentinel</strong>: ingesting telemetry through Log Analytics, authoring KQL detection rules, and automating response with Logic Apps. The hands-on version of everything I'd studied about how attacks actually surface in the data.</p>
+        <p>An end-to-end detection pipeline in <strong>Microsoft Sentinel</strong>: ingesting telemetry through Log Analytics, writing KQL detection rules, and automating triage with Logic Apps. The hands-on version of everything I'd studied about how attacks surface in the data. <a class="proj-link" href="https://github.com/yourusername/azure-siem-project">View the project &rarr;</a></p>
+      </div>
+    </div>
+ 
+    <div class="entry">
+      <div class="when">Ongoing</div>
+      <div>
+        <h3>Detection Validation with Atomic Red Team</h3>
+        <div class="role">Adversary emulation</div>
+        <p>Emulating real attacker techniques to confirm my detections actually fire — closing the gap between "I have a rule" and "the rule works." <a class="proj-link" href="https://github.com/yourusername/detection-validation">View the project &rarr;</a></p>
+      </div>
+    </div>
+ 
+    <div class="entry">
+      <div class="when">Next</div>
+      <div>
+        <h3>Your next project</h3>
+        <div class="role">add a title here</div>
+        <p>Drop your next build in here — a home-lab writeup, a tool you scripted, a CTF, a secure-code review. Copy one of the blocks above and swap the details. <a class="proj-link" href="#">Add link &rarr;</a></p>
       </div>
     </div>
   </div>
@@ -446,7 +449,7 @@
       <a href="#"><span class="k">$</span> tcm optic — music</a>
     </div>
     <footer>
-      © <span id="yr"></span> Your Name · built with plain HTML &amp; hosted on GitHub Pages
+      © <span id="yr"></span> G S · built with plain HTML &amp; hosted on GitHub Pages
     </footer>
   </div>
 </section>
@@ -465,3 +468,4 @@
 </script>
 </body>
 </html>
+ 
